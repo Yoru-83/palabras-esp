@@ -2,7 +2,7 @@ name: Update Consonants Daily
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Ejecutar el script todos los días a las 8:00 UTC (ajusta la hora según tu zona horaria)
+    - cron: '0 8 * * *'  # Ejecutar el script todos los días a las 8:00 UTC (ajusta la hora según tu zona horaria) //
 
 jobs:
   update-consonants:

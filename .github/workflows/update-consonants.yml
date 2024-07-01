@@ -11,15 +11,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  # Actualizar a la última versión de actions/checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3  # Actualizar a la última versión de actions/setup-node
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Especificar la versión de Node.js que deseas utilizar
-
-      - name: Install dependencies
-        run: npm install
+          node-version: '20'
 
       - name: Run update script
         run: node updateConsonants.js

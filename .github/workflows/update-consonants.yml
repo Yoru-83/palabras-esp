@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2  # Actualizar a la última versión de actions/setup-node
         with:
-          node-version: '16'  # Mantener Node.js versión 16 por ahora
+          node-version: '20'  # Especificar la versión de Node.js que deseas utilizar
 
       - name: Install dependencies
         run: |

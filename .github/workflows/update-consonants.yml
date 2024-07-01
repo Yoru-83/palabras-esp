@@ -3,7 +3,7 @@ name: Update Consonants Daily
 on:
   schedule:
     - cron: '0 8 * * *'  # Ejecutar el script todos los días a las 8:00 UTC
-  workflow_dispatch:  # Permitir la ejecución manual
+  workflow_dispatch: {}  # Permitir la ejecución manual
 
 jobs:
   update-consonants:

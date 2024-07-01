@@ -19,8 +19,11 @@ jobs:
           node-version: '20'  # Especificar la versión de Node.js que deseas utilizar
 
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
+        # Opcional: Actualizar npm a la última versión
+        # run: |
+        #   npm install
+        #   npm install -g npm@latest
 
       - name: Run update script
         run: node updateConsonants.js

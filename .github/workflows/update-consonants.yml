@@ -1,0 +1,24 @@
+name: Update Consonants Daily
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Ejecutar el script todos los días a las 8:00 UTC (ajusta la hora según tu zona horaria)
+
+jobs:
+  update-consonants:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run update script
+        run: node updateConsonants.js

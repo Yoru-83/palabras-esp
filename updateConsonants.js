@@ -1,4 +1,4 @@
-import PocketBase from 'pocketbase';
+/*import PocketBase from 'pocketbase';
 
 const pb = new PocketBase('https://yoru.pockethost.io');
 
@@ -28,3 +28,6 @@ async function updateConsonants() {
 }
 
 updateConsonants();
+*/
+
+console.log('Hola desde el script de actualización de consonantes!');

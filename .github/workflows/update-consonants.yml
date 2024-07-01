@@ -20,10 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        # Opcional: Actualizar npm a la última versión
-        # run: |
-        #   npm install
-        #   npm install -g npm@latest
 
       - name: Run update script
         run: node updateConsonants.js

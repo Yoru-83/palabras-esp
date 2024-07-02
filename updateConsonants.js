@@ -1,5 +1,9 @@
 //console.log('Ejecutando script de actualización de consonantes...');
 
+import PocketBase from 'pocketbase';
+
+const pb = new PocketBase('https://yoru.pockethost.io');
+
 async function obtenerPalabraConsonantes() {
     const url = 'https://raw.githubusercontent.com/Yoru-83/palabras-esp/main/lista-de-todas-las-palabras-en-espa%C3%B1ol.json';
 
@@ -22,10 +26,16 @@ async function obtenerPalabraConsonantes() {
         const consonantes = palabraSeleccionada.match(/[^aeiouáéíóúü]/gi);
         
         // Seleccionar solo tres consonantes en orden
-        const tresConsonantes = consonantes.slice(0, 3).join('');
+        const [letra1, letra2, letra3] = consonantes.slice(0, 3);
 
-        console.log('Palabra seleccionada:', palabraSeleccionada);
-        console.log('Tres consonantes:', tresConsonantes);
+        / example update data
+        const data = {
+            "letra1": letra1,
+            "letra2": letra2,
+            "letra3": letra3
+        };
+        
+        const record = await pb.collection('PLetras').update('f7atnxe9b4qb3iq', data);
 
     } catch (error) {
         console.error('Error al obtener la lista de palabras:', error);

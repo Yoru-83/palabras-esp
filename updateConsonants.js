@@ -35,7 +35,7 @@ async function obtenerPalabraConsonantes() {
             "letra3": letra3
         };
         
-        const record = await pb.collection('PLetras').update('f7atnxe9b4qb3iq', data);
+        //const record = await pb.collection('PLetras').update('f7atnxe9b4qb3iq', data);
 
     } catch (error) {
         console.error('Error al obtener la lista de palabras:', error);

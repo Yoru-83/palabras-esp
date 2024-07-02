@@ -1,6 +1,6 @@
-//console.log('Ejecutando script de actualización de consonantes...');
+// console.log('Ejecutando script de actualización de consonantes...');
 
-import PocketBase from 'pocketbase';
+const PocketBase = require('pocketbase/cjs'); // Asegúrate de tener instalada la librería PocketBase
 
 const pb = new PocketBase('https://yoru.pockethost.io');
 
@@ -41,8 +41,8 @@ async function obtenerPalabraConsonantes() {
 
         // example update data
         const data = {
-            "letra1": letra1 || ,
-            "letra2": letra2 || ,
+            "letra1": letra1 ||,
+            "letra2": letra2 ||,
             "letra3": letra3 ||
         };
 
@@ -57,3 +57,4 @@ async function obtenerPalabraConsonantes() {
 }
 
 obtenerPalabraConsonantes();
+

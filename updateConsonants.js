@@ -28,7 +28,7 @@ async function obtenerPalabraConsonantes() {
         // Seleccionar solo tres consonantes en orden
         const [letra1, letra2, letra3] = consonantes.slice(0, 3);
 
-        / example update data
+        // example update data
         const data = {
             "letra1": letra1,
             "letra2": letra2,

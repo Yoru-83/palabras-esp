@@ -41,9 +41,9 @@ async function obtenerPalabraConsonantes() {
 
         // example update data
         const data = {
-            "letra1": letra1 ||,
-            "letra2": letra2 ||,
-            "letra3": letra3 ||
+            "letra1": letra1,
+            "letra2": letra2,
+            "letra3": letra3
         };
 
         //console.log('Datos a actualizar:', data);

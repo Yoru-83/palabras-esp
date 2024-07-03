@@ -2,6 +2,7 @@
   "name": "palabras-esp",
   "version": "1.0.0",
   "description": "Script para actualizar consonantes en palabras en español",
+  "type": "module",
   "scripts": {
     "start": "node updateConsonants.js"
   },

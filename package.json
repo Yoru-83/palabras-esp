@@ -6,6 +6,6 @@
     "start": "node updateConsonants.js"
   },
   "dependencies": {
-    "pocketbase": "^1.0.0"
+    "pocketbase": "^0.22.14"
   }
 }

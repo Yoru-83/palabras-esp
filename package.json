@@ -1,0 +1,11 @@
+{
+  "name": "palabras-esp",
+  "version": "1.0.0",
+  "description": "Script para actualizar consonantes en palabras en español",
+  "scripts": {
+    "start": "node updateConsonants.js"
+  },
+  "dependencies": {
+    "pocketbase": "^1.0.0"
+  }
+}

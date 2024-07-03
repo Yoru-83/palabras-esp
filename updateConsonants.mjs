@@ -1,5 +1,3 @@
-// console.log('Ejecutando script de actualización de consonantes...');
-
 import PocketBase from 'pocketbase';
 
 const pb = new PocketBase('https://yoru.pockethost.io');
@@ -36,8 +34,8 @@ async function obtenerPalabraConsonantes() {
         // Extraer consonantes en orden de la palabra seleccionada
         const consonantes = palabraSeleccionada.match(/[^aeiouáéíóúü]/gi) || [];
 
-        // Seleccionar solo tres consonantes en orden
-        const [letra1, letra2, letra3] = consonantes.slice(0, 3);
+        // Seleccionar solo tres consonantes en orden y convertirlas a mayúsculas
+        const [letra1, letra2, letra3] = consonantes.slice(0, 3).map(letra => letra.toUpperCase());
 
         // example update data
         const data = {
@@ -46,10 +44,10 @@ async function obtenerPalabraConsonantes() {
             "letra3": letra3
         };
 
-        //console.log('Datos a actualizar:', data);
+        console.log('Datos a actualizar:', data);
         
         const record = await pb.collection('PLetras').update('f7atnxe9b4qb3iq', data);
-        //console.log('Actualización exitosa:', record);
+        console.log('Actualización exitosa:', record);
 
     } catch (error) {
         console.error('Error durante el proceso:', error.message);
@@ -57,4 +55,5 @@ async function obtenerPalabraConsonantes() {
 }
 
 obtenerPalabraConsonantes();
+
 

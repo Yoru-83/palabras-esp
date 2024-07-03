@@ -37,7 +37,7 @@ async function obtenerPalabraConsonantes() {
         // Seleccionar solo tres consonantes en orden y convertirlas a mayúsculas
         const [letra1, letra2, letra3] = consonantes.slice(0, 3).map(letra => letra.toUpperCase());
 
-        // example update data
+        ////////////////////////////////////////////////////////////////////////////////////////////////// ACTUALIZO LA BASE DE DATOS CON TRES CONSONANTES SELECCIONADAS
         const data = {
             "letra1": letra1,
             "letra2": letra2,
@@ -48,6 +48,19 @@ async function obtenerPalabraConsonantes() {
         
         const record = await pb.collection('PLetras').update('f7atnxe9b4qb3iq', data);
         console.log('Actualización exitosa:', record);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////// RECOJO TODOS LOS IDS QUE HAY EN LA TABLA PClasificacionDia PARA LUEGO BORRARLOS YA QUE NO HAY UNA FORMA DE BORRAR TODO EL CONTENIDO DE LA TABLA DE FORMA DIRECTA
+        const records = await pb.collection('PClasificacionDia').getFullList({
+            sort: '-created',
+        });
+
+        // Eliminar cada registro por su ID
+        for (const record of records) {
+            await pb.collection('PClasificacionDia').delete(record.id);
+            console.log(`Registro con ID ${record.id} eliminado.`);
+        }
+
+        console.log('Todos los registros han sido eliminados.');
 
     } catch (error) {
         console.error('Error durante el proceso:', error.message);

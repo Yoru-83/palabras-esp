@@ -50,16 +50,19 @@ async function obtenerPalabraConsonantes() {
         console.log('Actualización exitosa:', record);
 
         ////////////////////////////////////////////////////////////////////////////////////////////////// RECOJO TODOS LOS IDS QUE HAY EN LA TABLA PClasificacionDia PARA LUEGO BORRARLOS YA QUE NO HAY UNA FORMA DE BORRAR TODO EL CONTENIDO DE LA TABLA DE FORMA DIRECTA
+        // Leer todos los registros de la colección 'PClasificacionDia'
         const records = await pb.collection('PClasificacionDia').getFullList({
             sort: '-created',
         });
+
+        console.log('Número de registros a eliminar:', records.length);
 
         // Eliminar cada registro por su ID
         for (const record of records) {
             await pb.collection('PClasificacionDia').delete(record.id);
             console.log(`Registro con ID ${record.id} eliminado.`);
         }
-
+        
         console.log('Todos los registros han sido eliminados.');
 
     } catch (error) {

@@ -1,6 +1,6 @@
 // console.log('Ejecutando script de actualización de consonantes...');
 
-const PocketBase = require('pocketbase');
+import PocketBase from 'pocketbase';
 
 const pb = new PocketBase('https://yoru.pockethost.io');
 
